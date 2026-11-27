@@ -35,6 +35,8 @@ rpc.exports.arkts = async function (generation) {
   await call('fixture.counterA', 'add', [7], 7);
   await call('fixture.counterA', 'current', [], 7);
   await call('fixture.counterB', 'current', [], 100);
+  await call('fixture.counterB', 'add', [5], 105);
+  await call('fixture.counterB', 'add', [-5], 100);
   await call('fixture.counterA', 'echo', ['你好'], 'A:你好');
   await call('fixture.counterB', 'echo', ['你好'], 'B:你好');
   await call('fixture.counterA', 'acceptNull', [null], null);
