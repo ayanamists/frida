@@ -1,0 +1,7 @@
+cmake_minimum_required(VERSION 3.16)
+project(frida_arkts_bridge LANGUAGES CXX)
+add_library(arktsbridge SHARED native/bridge.cpp)
+target_compile_features(arktsbridge PRIVATE cxx_std_17)
+target_compile_options(arktsbridge PRIVATE -Wall -Wextra -Werror -Wno-unused-command-line-argument)
+set_target_properties(arktsbridge PROPERTIES CXX_VISIBILITY_PRESET hidden)
+target_link_libraries(arktsbridge PRIVATE libace_napi.z.so)

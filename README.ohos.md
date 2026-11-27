@@ -1,5 +1,11 @@
 # Initial HarmonyOS Gadget target
 
+An independent [experimental ArkTS bridge](contrib/harmonyos/arkts-bridge/README.md)
+now adds invocation of App-registered static and instance methods through a
+precompiled NAPI thread-safe queue. It keeps the `required` constraint and
+does not add language-specific behavior to Gum. Its discovery scope and
+validation are separate from the Gadget session checks below.
+
 This branch adds an ARM64 OHOS cross-build using the Native SDK selected by
 `OHOS_NATIVE_HOME`. It reuses the Linux-compatible userspace backends with an
 `ohos` subsystem; the device tested runs HarmonyOS / HongMeng Kernel, not Linux.
